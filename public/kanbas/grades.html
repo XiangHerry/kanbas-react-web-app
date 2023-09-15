@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grades Screen</title>
+</head>
+<body>
+
+<table width="100%" border="0">
+    <tr>
+        <!-- Kanbas Navigation Column -->
+        <td valign="top" width="20%">
+            <aside>
+                <h3>Kanbas Navigation</h3>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Commons</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </aside>
+        </td>
+        
+        <!-- Course Navigation Column -->
+        <td valign="top" width="20%">
+            <aside>
+                <h3>Course Navigation</h3>
+                <ul>
+                    <li><a href="public/kanbas/home.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="public/kanbas/assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="public/kanbas/grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collarborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="public/kanbas/settings/courseDetails.html">Settings</a></li>
+                </ul>
+            </aside>
+        </td>
+
+        <!-- Grades Screen Column -->
+        <td valign="top" width="60%">
+            <!-- Grades Screen -->
+            <section>
+                <h3>Grades</h3>
+                <select name="gradebook">
+                    <option value="gradebook1">Gradebook 1</option>
+                    <option value="gradebook2">Gradebook 2</option>
+                    <option value="gradebook2">Gradebook 3</option>
+                    <option value="gradebook2">Gradebook 4</option>
+                </select>
+                <select name="export">
+                    <option value="export1">Export 1</option>
+                    <option value="export1">Export 2</option>
+                    <option value="export1">Export 3</option>
+                    <option value="export1">Export 4</option>
+                </select>
+                <button>Import</button>
+                <button>Configure</button>
+                <div style="margin-bottom: 20px;">
+                    <h4><label>Student Names</label></h4>
+                    <input type="text" placeholder="Search by student name">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <h4><label>Assignment Names</label></h4>
+                    <input type="text" placeholder="Search by assignment name">
+                </div>
+                <div>
+                    <button>Apply Filters</button>
+                </div> 
+
+        
+                                                       
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Student Names </th>
+                            <th>Assignment 1 </th>
+                            <th>Assignment 2 </th>
+                            <th>Assignment 3 </th>
+                            <th>Assignment 4 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Student 1</td>
+                            <td><input type="text" value="85"></td>
+                            <td><input type="text" value="90"></td>
+                            <td>88</td>
+                            <td>91</td>
+                        </tr>
+                        <tr>
+                            <td>Student 2</td>
+                            <td>86</td>
+                            <td>80</td>
+                            <td><input type="text" value="82"></td>
+                            <td>89</td>
+                        </tr>
+                        <!-- ... other students -->
+                    </tbody>
+                </table>
+            </section>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
