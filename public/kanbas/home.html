@@ -1,14 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home Screen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
-        .indented {
-            margin-left: 20px;
+        /* Remove default list dots */
+        aside ul {
+            list-style: none;
+            padding-left: 0;
         }
-        .hollow-bullet li {
-            list-style-type: circle; 
+        /* Icon styling */
+        aside ul li a::before {
+            content: '\f007'; 
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            display: inline-block; 
+            margin-right: 10px;
+            color: red; 
+            vertical-align: middle; 
+        }
+        /* Specific icon and colors */
+        aside ul li a[href="/kanbas/navigation/accountNav.html"]::before {
+            content: '\f007';
+            color: gray;
+        }
+        aside ul li a[href="#dashboard"]::before {
+            content: '\f3fd'; /* dashboard icon */
         }
     </style>
 </head>
@@ -22,17 +38,19 @@
                 <h3>Kanbas Navigation</h3>
                 <ul>
                     <li><a href="/kanbas/navigation/accountNav.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
                     <li><a href="/kanbas/navigation/courseNav.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="#calendar">Calendar</a></li>
+                    <li><a href="#inbox">Inbox</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#studio">Studio</a></li>
+                    <li><a href="#commons">Commons</a></li>
+                    <li><a href="#help">Help</a></li>
                 </ul>
             </aside>
         </td>
+
+
 
         <!-- Course Navigation Column -->
         <td valign="top" width="20%">
