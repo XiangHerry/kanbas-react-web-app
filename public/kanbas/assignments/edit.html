@@ -2,56 +2,717 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assignments Screen</title>
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .kanbas-gray {
+    color: #acabac;
+}
+
+.kanbas-red {
+    color: #d41a2d;
+}
+
+.kanbas-black {
+    color: black;
+}
+
+.kanbas-green {
+    color: #06874a;
+}
+
+.kanbas-light-green {
+    color: #09cb6f;
+}
+
+.kanbas-light-gray {
+    color: #f5f5f5;
+}
+
+.kanbas-light-gray-bg {
+    background-color: #f5f5f5;
+}
+
+.kanbas-white {
+    color: white;
+}
+
+.kanbas-sidebar-selected {
+    background-color: white;
+    color: #d41a2d;
+}
+
+.kanbas-sidebar-unselected {
+    background-color: black;
+    color: white;
+}
+
+.kanbas-sidebar {
+    width: 80px;
+    text-align: center;
+    background-color: black;
+}
+
+.kanbas-icon-padding {
+    margin: 4px;
+    padding: 4px;
+}
+
+.kanbas-sidebar-text {
+    font-size: 12px;
+}
+
+.kanbas-account {
+    width: 200px;
+    text-align: left;
+}
+
+.kanbas-account-selected {
+    border-left-style: solid;
+    border-left-width: 2px;
+    margin-left: -10px;
+    padding-left: 8px;
+}
+
+.kanbas-account-border {
+    border-style: none;
+    padding-top: -25px;
+    padding-bottom: -25px;
+    margin: -2px;
+}
+
+.kanbas-column {
+    float: left;
+    margin: 8px;
+}
+
+.kanbas-course-column {
+    width: 80%;
+}
+
+.kanbas-edit-column {
+    width: 60%;
+}
+
+.kanbas-account-icon {
+    font-size: 128px;
+}
+
+.kanbas-no-underline {
+    text-decoration: none;
+}
+
+.kanbas-hyperlink {
+    text-decoration: none;
+    color: #d41a2d;
+}
+
+.kanbas-item-width-400 {
+    width: 400px;
+}
+
+.kanbas-item-width-350 {
+    width: 350px;
+}
+
+.kanbas-item-width-300 {
+    width: 300px;
+}
+
+.kanbas-item-width-250 {
+    width: 250px;
+}
+
+.kanbas-item-width-200 {
+    width: 200px;
+}
+
+.kanbas-item-height-400 {
+    height: 400px;
+}
+
+.kanbas-item-height-200 {
+    height: 200px;
+}
+
+.kanbas-center-heading {
+    text-align: center;
+}
+
+.kanbas-save-profile {
+    color: white;
+    background-color: #d41a2d;
+}
+
+.kanbas-ellipsis {
+    color: white;
+    font-size: 24px;
+}
+
+.kanbas-card-container {
+    max-width: 100%;
+}
+
+.kanbas-card {
+    width: 260px;
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb-item.active::before {
+    content: " > ";
+}
+
+.breadcrumb-item.kanbas-breadcrumb::before {
+    content: " > ";
+}
+
+.kanbas-module-header-padding {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.kanbas-module-padding {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.kanbas-text-left {
+    text-align: left;
+}
+
+.kanbas-text-right {
+    text-align: left;
+}
+
+.kanbas-module-icon {
+    margin-left: -50px;
+}
+
+.kanbas-assignment-margin {
+    padding-top: -20px;
+}
+
+.kanbas-assignment-icon {
+    font-size: 20px;
+    position: relative;
+    right: 40px;
+    bottom: 4px;
+    margin-right: -27px;
+}
+
+.kanbas-assignment-total {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.kanbas-assignment-border {
+    border-left-color: green;
+    border-left-width: 4px;
+}
+
+.kanbas-edit-section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.kanbas-width-40 {
+    width: 40%;
+}
+
+.kanbas-width-45 {
+    width: 48%;
+}
+
+.kanbas-width-50 {
+    width: 50%;
+}
+
+.kanbas-until {
+    position: relative;
+    left: 68px;
+}
+
+.kanbas-edit-grade {
+    padding: 0px;
+}
+
+.kanbas-edit-margin {
+    margin-right: -100px;
+}
+    </style>
+
 </head>
 <body>
+
+<!-- KANBAS NAVIGATION COLUMN -->
+<div class="list-group kanbas-sidebar kanbas-column">
+    <a href="/kanbas/navigation/accountNav.html" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-user kanbas-gray"></i><br/>
+        <div class="kanbas-sidebar-text">Account</div>
+    </a>
+    <a href="/kanbas/dashboard.html" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-clock kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Dashboard</div>
+    </a>
+    <a href="/kanbas/navigation/courseNav.html" class="list-group-item kanbas-sidebar-selected kanbas-icon-padding">
+        <i class="fa fa-book kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Courses</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-calendar kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Calendar</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-envelope kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Inbox</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-hourglass kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">History</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-tv kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Studio</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-tree kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Commons</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
+        <i class="fa fa-question kanbas-red"></i><br/>
+        <div class="kanbas-sidebar-text">Help</div>
+    </a>
+</div>
+
+<!-- COURSE NAVIGATION COLUMN -->
+<div class="list-group kanbas-account kanbas-column">
+    <a href="home.html" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Home</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Modules</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Piazza</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Zoom Meetings</div>
+    </a>
+    <a href="assignments.html" class="list-group-item kanbas-black kanbas-account-border">
+        <div class="kanbas-account-selected">Assignments</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Quizzes</div>
+    </a>
+    <a href="grades.html" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Grades</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>People</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Panopto Video</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Discussions</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Announcements</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Pages</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Files</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Rubrics</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Outcomes</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Collaborations</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Syllabus</div>
+    </a>
+    <a href="#" class="list-group-item kanbas-red kanbas-account-border">
+        <div>Settings</div>
+    </a>
+</div>
+
+<!-- ASSIGNMENT COLUMN -->
+<div class="kanbas-column kanbas-edit-column">
+
+    <h4>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/kanbas/home.html" class="kanbas-hyperlink">CS5610</a>
+                </li>
+                <li class="breadcrumb-item kanbas-breadcrumb">
+                    <a href="/kanbas-react-web-app/public/kanbas/assignments/index.html" class="kanbas-hyperlink">Assignments</a>
+                </li>
+                <li class="breadcrumb-item active">A1 - ENV + ...</li>
+            </ol>
+        </nav>
+    </h4>
+
+    <hr/>
     
-<table width="100%" border="0">
-    <tr>
-        <!-- Kanbas Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Kanbas Navigation</h3>
-                <ul>
-                    <li><a href="/kanbas/navigation/accountNav.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="/kanbas/navigation/courseNav.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
+    <a href="#">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end">
+            <i class="fa fa-ellipsis-vertical mt-1"></i>
+        </button>
+    </a>
+    <div class="kanbas-green float-end mt-2 me-3">
+        <i class="fa fa-circle-check"></i>
+        Published
+    </div>
+    
+    <br/>
+    <br/>
+    <hr/>
+    
+    <label for="input-1" class="form-label">
+        Assignment Name
+    </label>
+    <input class="form-control" id="input-1" value="A1 - SETUP">
+    
+    <br/>
+    
+    <textarea class="form-control" rows="6">This assignment describes how to install the development environment for creating and working with Web applications we will be developing this semester. We will add new content every week, pushing the code to a GitHub source repository, and then deploying the content to a remote server hosted on Netlify.</textarea>
+
+    <br/>
+    
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Points
+                </div>
+            </div>
+            <div class="col-8">
+                <input class="form-control" id="input-2" value="100">
+            </div>
+            <div class="col-2"></div>
+        </div>
+    
+        <br/>
+    
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Assignment Group
+                </div>
+            </div>
+            <div class="col-8">
+                <select class="form-select">
+                    <option selected>ASSIGNMENTS</option>
+                    <option value="1">TEMP-1</option>
+                    <option value="2">TEMP-2</option>
+                    <option value="3">TEMP-3</option>
+                </select>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Display Grade as
+                </div>
+            </div>
+            <div class="col-8">
+                <select class="form-select">
+                    <option selected>PERCENTAGE</option>
+                    <option value="1">TEMP-1</option>
+                    <option value="2">TEMP-2</option>
+                    <option value="3">TEMP-3</option>
+                </select>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end"></div>
+            </div>
+            <div class="col-8">
+                <input class="form-check-input" type="checkbox" id="check-1"/>
+                <label class="form-check-label" for="check-1">Do not count this assignment towards the final grade</label>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Submission Type
+                </div>
+            </div>
+            <div class="col-8">
+            
+                <ul class="list-group list-group-item kanbas-edit-section">    
+    
+                    <li class="list-group-item border-0">
+                        <select class="form-select">
+                            <option selected>ONLINE</option>
+                            <option value="1">TEMP-1</option>
+                            <option value="2">TEMP-2</option>
+                            <option value="3">TEMP-3</option>
+                        </select>
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <b>Online Entry Options</b>
+                    </li>
+                        
+                    <li class="list-group-item border-0"> 
+                        <input class="form-check-input" type="checkbox" id="check-2"/>
+                        <label class="form-check-label" for="check-2">Text Entry</label>
+                    </li>
+                        
+                    <li class="list-group-item border-0"> 
+                        <input class="form-check-input" type="checkbox" id="check-3"/>
+                        <label class="form-check-label" for="check-3">Website URL</label>
+                    </li>
+                        
+                    <li class="list-group-item border-0">  
+                        <input class="form-check-input" type="checkbox" id="check-4"/>
+                        <label class="form-check-label" for="check-4">Media Recordings</label>
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <input class="form-check-input" type="checkbox" id="check-5"/>
+                        <label class="form-check-label" for="check-5">Student Annotation</label>
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <input class="form-check-input" type="checkbox" id="check-6"/>
+                        <label class="form-check-label" for="check-6">File Uploads</label>
+                    </li>
+                
                 </ul>
-            </aside>
-        </td>
-        <!-- Course Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Course Navigation</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Modules</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="/kanbas/assignments/index.html">Assignments</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="/kanbas/grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panopto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collarborations</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="#">Settings</a></li>
+            
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Submission Attempts
+                </div>
+            </div>
+            <div class="col-8">
+                <select class="form-select">
+                    <option selected>Unlimited</option>
+                    <option value="1">TEMP-1</option>
+                    <option value="2">TEMP-2</option>
+                    <option value="3">TEMP-3</option>
+                </select>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Plagiarism Review
+                </div>
+            </div>
+            <div class="col-8">
+                <select class="form-select">
+                    <option selected>None</option>
+                    <option value="1">TEMP-1</option>
+                    <option value="2">TEMP-2</option>
+                    <option value="3">TEMP-3</option>
+                </select>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Group Assignment
+                </div>
+            </div>
+            <div class="col-8">
+                <input class="form-check-input" type="checkbox" id="check-7"/>
+                <label class="form-check-label" for="check-7">This is a group assignment</label>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Peer Reviews
+                </div>
+            </div>
+            <div class="col-8">
+                <input class="form-check-input" type="checkbox" id="check-8"/>
+                <label class="form-check-label" for="check-8">Require Peer Reviews</label>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        
+        <br/>
+        
+        <div class="row">
+            <div class="col-2">
+                <div class="float-end">
+                    Assign
+                </div>
+            </div>
+            <div class="col-8">
+            
+                <ul class="list-group list-group-item kanbas-edit-section">    
+    
+                    <li class="list-group-item border-0">
+                        <b>Assign to</b>
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <input class="form-control" id="input-3" value="Everyone">
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <b>Due</b>
+                    </li>
+                        
+                    <li class="list-group-item border-0">
+                        <input class="form-control" id="input-4" value="September 18, 2023, 11:59 PM">
+                    </li>
+                    
+                    <li class="list-group-item border-0">
+                        <b class="kanbas-width-45">Available from</b>
+                        <b class="kanbas-width-45 kanbas-until">Until</b>
+                    </li>
+                        
+                    <li class="list-group-item border-0 mb-5">
+                        <input class="form-control float-start kanbas-width-45 me-1" id="input-5" value="September 6, 2023, 11:59 PM">
+                        <input class="form-control float-start kanbas-width-45 ms-1" id="input-6" value="September 18, 2023, 11:59 PM">
+                    </li>
+                
                 </ul>
-            </aside>
-        </td>
-        <td valign="top">
+            
+            </div>
+            <div class="col-2"></div>
+        </div>
+    
+    </div>
+    
+    <hr>
+    
+    <div class="float-start">
+        <input class="form-check-input" type="checkbox" id="check-9"/>
+        <label class="form-check-label" for="check-9">Notify users that this content has changed</label>
+    </div>
+
+    <a href="assignments.html">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end me-1 kanbas-save-profile btn-danger">
+            Save
+        </button>
+    </a>
+    <a href="assignments.html">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end me-1">
+            Cancel
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>
+        <!-- <div class="row">
+            <div class="col-md-3 position-fixed no-gutters"
+                style="max-width: 200px; min-width: 190px; padding-right: 25px; top: 0; left: 0;">
+
+                <aside style="background-color: #000; padding: 15px; width: 100%;">
+                    <h3 class="text-white">Navigation</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-user-circle text-danger d-block mb-1"></i>
+                            <a href="/kanbas/navigation/accountNav.html" class="text-white">Account</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
+                            <a href="/kanbas/dashboard.html" class="text-white">Dashboard</a>
+                        </li>
+                        <li class="mb-3" style="background-color: #fff;">
+                            <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
+                            <a href="/kanbas/navigation/courseNav.html" class="text-danger">Courses</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Calendar</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-inbox text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Inbox</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-clock text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">History</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-tv text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Studio</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-comment text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Commons</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-question text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Help</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="col content-start">
+                <div class="row mt-5">
+                    <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                        <ul class="nav flex-column fs-5">
+                            <li class="nav-item"><a class="nav-link active text-danger" href=" ">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Modules</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Announcements</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Quizzes</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Grades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Zoom Meetings</a></li>
+                            <li class="nav-item border-left border-dark"><a class="nav-link active text-dark"
+                                    href="/kanbas/assignments/index.html">Assignments</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">People</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        <!-- <td valign="top">
             <select name="SpeedGrader">
                 <option value="1">SpeedGrader</option>
                 <option value="2">Speed Grader</option>
@@ -117,4 +778,4 @@
 
     </tr>
 </table>
-
+ -->

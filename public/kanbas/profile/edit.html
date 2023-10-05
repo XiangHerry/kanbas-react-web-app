@@ -2,107 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Assignments Screen</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      crossorigin="anonymous"></script>
+  <!-- Adding Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      .fixed-button {
+          position: fixed !important;
+          top: 0 !important;
+          right: 0 !important;
+      }
+  </style>
+  <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Edit Profile</title>
-  <!-- Including the CSS -->
   <link href="edit.css" rel="stylesheet">
+  <!-- (Include Bootstrap CSS here if it's not globally included) -->
 </head>
+
 <body>
-  <!-- Beginning of the main table -->
-  <table border="0" width="58.85%">
-    <tbody>
-      <tr valign="top">
-        <td>
-          <ul>
-            <li><a href='/kanbas/navigation/accountNav.html'>&#65;ccount</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="/kanbas/navigation/courseNav.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <!-- More links -->
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
-        <!-- Notifications and Settings -->
-        <td>
-          <ul>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">ePortfolios</a></li>
-            <li><a href="#">Shared Content</a></li>
-            <li><a href="#">The Hub</a></li>
-            <li><a href="#">Qwickly Course Tools</a></li>
-            <li><a href="#">Global Announcements</a></li>
-          </ul>
-        </td>
-        <td>
-          <!-- Profile edit form -->
-          <form id="profile-edit-form" action="kanbas/profile/index.html">
-            <div>
-              <h1>Chenyi Xiang</h1>
-              <label for="profile-edit-name">Name:* </label>
-              <input id="profile-edit-name" name="name" type="text" value="Chenyi Xiang">
-              <label for="profile-edit-pronouns">Pronouns: </label>
-              <select id="profile-edit-pronouns" name="pronouns">
-                <option selected value="NONE">None</option>
-                <option value="HE-HIM-HIS">He/Him/His</option>
-                <option value="SHE-HER-HERS">She/Her/Hers</option>
-                <option value="THEY-THEM-THEIRS">They/Them/Theirs</option>
-              </select>
-              <br>
-              <label for="profile-edit-title">Title: </label><br>
-              <input id="profit-edit-title" type="text" name="title">
-            </div>
-            <div>
-              <h2>Contact</h2>
-              No registered services, you can add some on the <a href="#">settings</a> page.
-            </div>
-            <div>
-              <h2>Biography</h2>
-              <textarea id="profile-edit-biography" name="biography" rows="10" cols="30">Student, Software Development Engineer Intern, tech gadgets enthusiast, Gym lover.</textarea>
-            </div>
-            <div>
-              <h2>Links</h2>
-              <ul>
-                <li id="external-link"><a href="https://www.linkedin.com/in/herryxiang/">LinkedIn</a> Links to an external site.</li>
-              </ul>
-            </div>
-            <table border="0" width="80%" id="links-table">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th></th>
-                  <th>URL</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="auto-width"><input id="profile-edit-link-title" name="link-title" type="text" value="LinkedIn"></td>
-                  <td>&rarr;</td>
-                  <td class="auto-width"><input id="profile-edit-link-url" name="link-url" type="text" value="https://www.linkedin.com/in/herryxiang/"></td>
-                  <td><a href="#">Remove</a></td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- Profile Edit Controls -->
-            <div id="profile-edit-link-buttons">
-              <button type="button">Add another link</button><br>
-              <button type="button">Cancel</button>
-              <button type="submit">Save Profile</button><br>
-              <button type="button">Edit Profile</button>
-              <button>Cancel Editing</button>
-            </div>
+    
+  <div class="container-fluid mt-5">
+    <div class="row">
+          <!-- Kanbas Navigation Column -->
+          <div class="col-md-4" style="max-width: 200px; min-width: 190px; padding-right: 25px;">
+              <aside style="background-color: #000; padding: 15px; width: 100%;">
+                  <h3 class="text-white">Kanbas Navigation</h3>
+                  <ul class="list-unstyled">
+                      <li class="mb-3" style="background-color: #fff;">
+                          <i class="fas fa-2x fa-user-circle d-block mb-1" style="color: grey;"></i>
+                          <a href="/kanbas/navigation/accountNav.html" class="text-danger">Account</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
+                          <a href="/kanbas-react-web-app/public/kanbas/dashboard.html" class="text-white">Dashboard</a>
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
+                        <a href="/kanbas/navigation/courseNav.html" class="text-white">Courses</a>
+                    </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">Calendar</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-inbox text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">Inbox</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-clock text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">History</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-tv text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">Studio</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-comment text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">Commons</a>
+                      </li>
+                      <li class="mb-3">
+                          <i class="fas fa-2x fa-question text-danger d-block mb-1"></i>
+                          <a href="#" class="text-white">Help</a>
+                      </li>
+                  </ul>
+              </aside>
+          </div>
+          <div class="col-md-4">
+            <aside>
+                <h4>Chenyi Xiang's Profile</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-danger">Notifications</a></li>
+                    <li><a href="/kanbas/profile/index.html" class="text-dark border-left pl-2">Profile</a></li>
+                    <li><a href="#" class="text-danger">Files</a></li>
+                    <li><a href="/kanbas/settings/courseDetails.html" class="text-danger">Settings</a></li>
+                    <li><a href="#" class="text-danger">ePortfolios</a></li>
+                    <li><a href="#" class="text-danger">Shared Contents</a></li>
+                    <li><a href="#" class="text-danger">The Hub</a></li>
+                    <li><a href="#" class="text-danger">Quickly Course Tools</a></li>
+                    <li><a href="#" class="text-danger">Global Announcements</a></li>
+                </ul>
+            </aside>
+        </div>
+          <div class="col-md-4">
+            <!-- Profile edit form -->
+            <form id="profile-edit-form" action="kanbas/profile/index.html">
+              <div>
+                  <h1>Chenyi Xiang</h1>
+                  <label for="profile-edit-name">Name:* </label>
+                  <input id="profile-edit-name" name="name" type="text" value="Chenyi Xiang" class="form-control"><br>
+                  <br>
+                  <label for="profile-edit-pronouns">Pronouns: </label>
+                  <br>
+                  <select id="profile-edit-pronouns" name="pronouns" class="form-control">
+                      <option selected value="NONE">None</option>
+                      <option value="HE-HIM-HIS">He/Him/His</option>
+                      <option value="SHE-HER-HERS">She/Her/Hers</option>
+                      <option value="THEY-THEM-THEIRS">They/Them/Theirs</option>
+                  </select>
+                  <br>
+                  <label for="profile-edit-title">Title: </label><br>
+                  <input id="profile-edit-title" type="text" name="title" class="form-control">
+              </div>
+              <div>
+                  <h2>Contact</h2>
+                  <p>No registered services, you can add some on the <a href="/kanbas-react-web-app/public/kanbas/settings/index.html" style="color: red;">settings</a> page</p>
+              </div>
+              <div>
+                  <h2>Biography</h2>
+                  <textarea id="profile-edit-biography" name="biography" rows="10" class="form-control">Student, Software Development Engineer Intern, tech gadgets enthusiast, Gym lover.</textarea>
+              </div>
+              <!-- Profile Links Section using Bootstrap's Grid System -->
+              <div class="row">
+                  <div class="col-md-6">
+                      <h2>Links</h2>
+                      <input id="profile-edit-link-title" name="link-title" type="text" value="Youtube" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                      <h2>&nbsp;</h2>
+                      <input id="profile-edit-link-url" name="link-url" type="text" value="https://www.youtube.com/@WebDevTV" class="form-control">
+                  </div>
+              </div>
+          
+              <!-- Profile Edit Controls -->
+              <div id="profile-edit-link-buttons" class="mt-4">
+                  <button type="button" class="btn btn-secondary mb-3">Add another link</button>
+                  <div class="float-end">
+                      <button type="button" class="btn btn-secondary mr-2">Cancel</button>
+                      <button type="submit" class="btn btn-danger">Save Profile</button>
+                  </div>
+              </div>
+          
+              <div class="fixed-button pe-3 pt-3 float-end">
+                  <a href="/kanbas-react-web-app/public/kanbas/profile/edit.html" class="btn btn-secondary"><i class="fa fa-pencil" aria-hidden="true"></i>Cancel Editing</a>
+              </div>
           </form>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+        </div>
   <!-- End of the body content -->
 </body>
 </html>

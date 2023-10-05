@@ -1,58 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Assignments Screen</title>
+    <title>Assignment Screen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+        crossorigin="anonymous"></script>
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "";
+        }
+        .bordered-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;  
+            background-color: green;  }
+        .breadcrumb-container {
+            position: fixed;
+            top: 0;
+            /* align to the top */
+            left: -760px;
+            /* push it to the right of the navigation which has a width of 225px */
+            z-index: 1000;
+            /* ensure it appears on top of other elements */
+        }
+
+        .content-start {
+            padding-left: 250px;
+            /* Adjusting to accommodate the width of navigation */
+        }
+
+        .no-gutters {
+            padding-left: 0 !important;
+        }
+    </style>
 </head>
+
 <body>
-    
-<table width="100%" border="0">
-    <tr>
-        <!-- Kanbas Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Kanbas Navigation</h3>
-                <ul>
-                    <li><a href="/kanbas/navigation/accountNav.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="/kanbas/navigation/courseNav.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </aside>
-        </td>
-        
-        <!-- Course Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Course Navigation</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Modules</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="/kanbas/assignments/edit.html">Assignments</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="/kanbas/grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panopto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collarborations</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="/kanbas/settings/courseDetails.html">Settings</a></li>
-                </ul>
-            </aside>
-        </td>
-        <td valign="top" width="60%">
+    <div class="container-fluid mt-5">
+        <div>
+            <div class="breadcrumb-container fixed-top d-flex justify-content-between">
+                <div></div> <!-- This is an empty div to keep spacing consistent with justify-content-between -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item text-danger">≡</li>
+                        <li class="breadcrumb-item text-danger">CS5610</li>
+                        <li class="breadcrumb-item">2023 Fall</li>
+                        <li class="breadcrumb-item">></li>
+                        <li class="breadcrumb-item">Home</li>
+                    </ol>
+                </nav>
+                <div></div> <!-- This is an empty div to keep spacing consistent with justify-content-between -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- Kanbas Navigation Column -->
+            <div class="col-md-3 position-fixed no-gutters"
+                style="max-width: 200px; min-width: 190px; padding-right: 25px; top: 0; left: 0;">
+
+                <aside style="background-color: #000; padding: 15px; width: 100%;">
+                    <h3 class="text-white">Navigation</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-user-circle text-danger d-block mb-1"></i>
+                            <a href="/kanbas/navigation/accountNav.html" class="text-white">Account</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
+                            <a href="/kanbas/dashboard.html" class="text-white">Dashboard</a>
+                        </li>
+                        <li class="mb-3" style="background-color: #fff;">
+                            <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
+                            <a href="/kanbas/navigation/courseNav.html" class="text-danger">Courses</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Calendar</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-inbox text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Inbox</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-clock text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">History</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-tv text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Studio</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-comment text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Commons</a>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-2x fa-question text-danger d-block mb-1"></i>
+                            <a href="#" class="text-white">Help</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+
+            <div class="col content-start">
+                <div class="row mt-5">
+                    <!-- Column 1 -->
+                    <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                        <ul class="nav flex-column fs-5">
+                            <li class="nav-item"><a class="nav-link active text-danger" href=" ">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Modules</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Announcements</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Quizzes</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Grades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Zoom Meetings</a></li>
+                            <li class="nav-item border-left border-dark"><a class="nav-link active text-dark"
+                                    href="/kanbas/assignments/index.html">Assignments</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">People</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="#">Settings</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-10 row">
+                        <!-- Home Screen Column -->
+                        <div class="col-lg-12">
+                            <div class="border-bottom" style="height: 70px;">
+                                <div class="float-end d-flex flex-row">
+                                    <div class="border-bottom" style="height: 70px;">
+                                        <input type="text" placeholder="Search for Assignments">
+                                        <button>+Group</button>
+                                        <button><a class="text-danger"
+                                                href="/kanbas/assignments/edit.html">Assignment</a></button>
+                                        <button><i class="fa fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="fs-4 mt-3">
+                                    <ul class="list-group w-100">
+                                        <li class="py-3 list-group-item list-group-item-secondary">
+                                            <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                            <i class="fa-solid fa-sort-down fa-xs"></i>
+                                            Assignments
+                                            <button>40% of Total</i>
+                                            </button>
+                                            <span class="float-end">
+                                                <i class="fa fa-plus px-3"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </span>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A1 SETUP
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week0 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A2 HTML
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week1 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A3 CSS
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week2 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A4 BOOTSTRAP
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week3 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A5 JAVASCRIPT
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week4 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="py-3 list-group-item d-flex align-items-center bordered-item">
+                                            <div class="mr-3">
+                                                <i class="fa-solid fa-grip-vertical fa-2xs"></i>
+                                                <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
+                                                <i class="fa fa-ellipsis-v"></i>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    A6 REACT
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    week5 ...
+                                                </div>
+                                                <div style="font-size: 12px;">
+                                                    Due...
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <td valign="top" width="60%">
             <input type="text" placeholder="Search for Assignments">
             <button>Group</button>
             <button><a href="/kanbas/assignments/edit.html">Assignment</a></button>
@@ -169,4 +387,4 @@
         </section>
         </td>
     </tr>
-</table>
+</table> -->
