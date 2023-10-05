@@ -1,136 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Grades Screen</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Courses</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <style>
+.kanbas-gray {
+    color: #acabac;
+}
 
-<table width="100%" border="0">
-    <tr>
-        <!-- Kanbas Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Kanbas Navigation</h3>
-                <ul>
-                    <li><a href="kanbas/navigation/accountNav.html">Account</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="/kanbas/navigation/courseNav.html">Courses</a></li>
-                    <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Studio</a></li>
-                    <li><a href="#">Commons</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </aside>
-        </td>
-        
-        <!-- Course Navigation Column -->
-        <td valign="top" width="20%">
-            <aside>
-                <h3>Course Navigation</h3>
-                <ul>
-                    <li><a href="/kanbas/home.html">Home</a></li>
-                    <li><a href="#">Modules</a></li>
-                    <li><a href="#">Piazza</a></li>
-                    <li><a href="#">Zoom Meetings</a></li>
-                    <li><a href="/kanbas/assignments/index.html">Assignments</a></li>
-                    <li><a href="#">Quizzes</a></li>
-                    <li><a href="/kanbas/grades.html">Grades</a></li>
-                    <li><a href="#">People</a></li>
-                    <li><a href="#">Panopto Video</a></li>
-                    <li><a href="#">Discussions</a></li>
-                    <li><a href="#">Announcements</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Files</a></li>
-                    <li><a href="#">Rubrics</a></li>
-                    <li><a href="#">Outcomes</a></li>
-                    <li><a href="#">Collarborations</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    <li><a href="/kanbas/settings/index.html">Settings</a></li>
-                </ul>
-            </aside>
-        </td>
 
-        <!-- Grades Screen Column -->
-        <td valign="top" width="60%">
-            <!-- Grades Screen -->
-            <section>
-                <h3>Grades</h3>
-                <select name="gradebook">
-                    <option value="gradebook1">Gradebook 1</option>
-                    <option value="gradebook2">Gradebook 2</option>
-                    <option value="gradebook2">Gradebook 3</option>
-                    <option value="gradebook2">Gradebook 4</option>
-                </select>
-                <select name="export">
-                    <option value="export1">Export 1</option>
-                    <option value="export1">Export 2</option>
-                    <option value="export1">Export 3</option>
-                    <option value="export1">Export 4</option>
-                </select>
-                <button>Import</button>
-                <button>Configure</button>
-                <div style="margin-bottom: 20px;">
-                    <h4><label>Student Names</label></h4>
-                    <input type="text" placeholder="Search by student name">
+.kanbas-red {
+    color: #d41a2d;
+}
+
+.kanbas-black {
+    color: black;
+}
+
+.kanbas-green {
+    color: #06874a;
+}
+
+.kanbas-light-green {
+    color: #09cb6f;
+}
+
+.kanbas-light-gray {
+    color: #f5f5f5;
+}
+
+.kanbas-light-gray-bg {
+    background-color: #f5f5f5;
+}
+
+.kanbas-white {
+    color: white;
+}
+
+.kanbas-sidebar-selected {
+    background-color: white;
+    color: #d41a2d;
+}
+
+.kanbas-sidebar-unselected {
+    background-color: black;
+    color: white;
+}
+
+.kanbas-sidebar {
+    width: 80px;
+    text-align: center;
+    background-color: black;
+}
+
+.kanbas-icon-padding {
+    margin: 4px;
+    padding: 4px;
+}
+
+.kanbas-sidebar-text {
+    font-size: 12px;
+}
+
+.kanbas-account {
+    width: 200px;
+    text-align: left;
+}
+
+.kanbas-account-selected {
+    border-left-style: solid;
+    border-left-width: 2px;
+    margin-left: -10px;
+    padding-left: 8px;
+}
+
+.kanbas-account-border {
+    border-style: none;
+    padding-top: -25px;
+    padding-bottom: -25px;
+    margin: -2px;
+}
+
+.kanbas-column {
+    float: left;
+    margin: 8px;
+}
+
+.kanbas-course-column {
+    width: 80%;
+}
+
+.kanbas-edit-column {
+    width: 60%;
+}
+
+.kanbas-account-icon {
+    font-size: 128px;
+}
+
+.kanbas-no-underline {
+    text-decoration: none;
+}
+
+.kanbas-hyperlink {
+    text-decoration: none;
+    color: #d41a2d;
+}
+
+.kanbas-item-width-400 {
+    width: 400px;
+}
+
+.kanbas-item-width-350 {
+    width: 350px;
+}
+
+.kanbas-item-width-300 {
+    width: 300px;
+}
+
+.kanbas-item-width-250 {
+    width: 250px;
+}
+
+.kanbas-item-width-200 {
+    width: 200px;
+}
+
+.kanbas-item-height-400 {
+    height: 400px;
+}
+
+.kanbas-item-height-200 {
+    height: 200px;
+}
+
+.kanbas-center-heading {
+    text-align: center;
+}
+
+.kanbas-save-profile {
+    color: white;
+    background-color: #d41a2d;
+}
+
+.kanbas-ellipsis {
+    color: white;
+    font-size: 24px;
+}
+
+.kanbas-card-container {
+    max-width: 100%;
+}
+
+.kanbas-card {
+    width: 260px;
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb-item.active::before {
+    content: " > ";
+}
+
+.breadcrumb-item.kanbas-breadcrumb::before {
+    content: " > ";
+}
+
+.kanbas-module-header-padding {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.kanbas-module-padding {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.kanbas-text-left {
+    text-align: left;
+}
+
+.kanbas-text-right {
+    text-align: left;
+}
+
+.kanbas-module-icon {
+    margin-left: -50px;
+}
+
+.kanbas-assignment-margin {
+    padding-top: -20px;
+}
+
+.kanbas-assignment-icon {
+    font-size: 20px;
+    position: relative;
+    right: 40px;
+    bottom: 4px;
+    margin-right: -27px;
+}
+
+.kanbas-assignment-total {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.kanbas-assignment-border {
+    border-left-color: green;
+    border-left-width: 4px;
+}
+
+.kanbas-edit-section {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.kanbas-width-40 {
+    width: 40%;
+}
+
+.kanbas-width-45 {
+    width: 48%;
+}
+
+.kanbas-width-50 {
+    width: 50%;
+}
+
+.kanbas-until {
+    position: relative;
+    left: 68px;
+}
+
+.kanbas-edit-grade {
+    padding: 0px;
+}
+
+.kanbas-edit-margin {
+    margin-right: -100px;
+}
+.content-start {
+            padding-left: 250px;
+            /* Adjusting to accommodate the width of navigation */
+        }
+        </style>
+    
+    </head>
+    <body>
+
+        <div class="container-fluid mt-5">
+
+            <div class="row">
+                <!-- Kanbas Navigation Column -->
+                <div class="col-md-3 position-fixed no-gutters"
+                    style="max-width: 200px; min-width: 190px; padding-right: 25px; top: 0; left: 0;">
+    
+                    <aside style="background-color: #000; padding: 15px; width: 100%;">
+                        <h3 class="text-white">Navigation</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-user-circle text-danger d-block mb-1"></i>
+                                <a href="/kanbas/navigation/accountNav.html" class="text-white">Account</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
+                                <a href="/kanbas/dashboard.html" class="text-white">Dashboard</a>
+                            </li>
+                            <li class="mb-3" style="background-color: #fff;">
+                                <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
+                                <a href="/kanbas/navigation/courseNav.html" class="text-danger">Courses</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">Calendar</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-inbox text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">Inbox</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-clock text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">History</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-tv text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">Studio</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-comment text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">Commons</a>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-2x fa-question text-danger d-block mb-1"></i>
+                                <a href="#" class="text-white">Help</a>
+                            </li>
+                        </ul>
+                    </aside>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <h4><label>Assignment Names</label></h4>
-                    <input type="text" placeholder="Search by assignment name">
-                </div>
-                <div>
-                    <button>Apply Filters</button>
-                </div> 
+    
+                <div class="col content-start">
+                    <div class="row mt-5">
+                        <!-- Column 1 -->
+                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                            <ul class="nav flex-column fs-5">
+                                <li class="nav-item"><a class="nav-link active text-danger" href="/kanbas-react-web-app/public/kanbas/home.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Piazza</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Zoom Meetings</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Modules</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Quizzes</a></li>
+                                <li class="nav-item "><a class="nav-link text-danger"
+                                    href="/kanbas/assignments/index.html">Assignments</a></li>                                
+                                <li class="nav-item">
+                                    <a href="/kanbas/grades.html" class="list-group-item kanbas-black kanbas-account-border">
+                                        <div class="kanbas-account-selected">grades</div>
+                                    </a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">People</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Microsoft</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">FACT Reporting and Photo Poster</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Discussions</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Announcements</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Pages</a></li>
+                                <li class="nav-item"><a class="nav-link text-danger" href="#">Files</a></li>
+                            </ul>
+                        </div>
+                    </div>
+<!-- GRADES COLUMN -->
+<div class="kanbas-column">
 
-        
-                                                       
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Student Names </th>
-                            <th>Assignment 1 </th>
-                            <th>Assignment 2 </th>
-                            <th>Assignment 3 </th>
-                            <th>Assignment 4 </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Student 1</td>
-                            <td><input type="text" value="85"></td>
-                            <td><input type="text" value="90"></td>
-                            <td>88</td>
-                            <td>91</td>
-                        </tr>
-                        <tr>
-                            <td>Student 2</td>
-                            <td>86</td>
-                            <td>80</td>
-                            <td><input type="text" value="82"></td>
-                            <td>89</td>
-                        </tr>
-                        <tr>
-                            <td>Student 3</td>
-                            <td><input type="text" value="85"></td>
-                            <td><input type="text" value="90"></td>
-                            <td>99</td>
-                            <td>98</td>
-                        </tr>
-                        <tr>
-                            <td>Student 4</td>
-                            <td>89</td>
-                            <td>78</td>
-                            <td><input type="text" value="82"></td>
-                            <td>100</td>
-                        </tr>                       
-                    </tbody>
-                </table>
-            </section>
-        </td>
-    </tr>
-</table>
+    <h4>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/kanbas/home.html" class="kanbas-hyperlink">CS4550.12631.202340</a>
+                </li>
+                <li class="breadcrumb-item active">Grades</li>
+            </ol>
+        </nav>
+    </h4>
+    
+    <hr/>
+    
+    <a href="#">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end">
+            <i class="fa fa-gear mt-1"></i>
+        </button>
+    </a>
+    <a href="#">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end me-1">
+            <i class="fa fa-file-export mt-1 me-1"></i>
+            Export
+            <i class="fa fa-angle-down"></i>
+        </button>
+    </a>
+    <a href="#">
+        <button type="submit" class="btn kanbas-light-gray-bg float-end me-1">
+            <i class="fa fa-file-import mt-1 me-1"></i>
+            Import
+        </button>
+    </a>
+    
+    <br/>
+    <br/>
+    
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col">
+                <b>Student Names</b>
+            </div>
+            <div class="col">
+                <b>Assignment Names</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input class="form-control" placeholder="Search Students"/>
+            </div>
+            <div class="col">
+                <input class="form-control" placeholder="Search Assignments"/>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#">
+        <button type="submit" class="btn kanbas-light-gray-bg float-start mt-2">
+            <i class="fa fa-filter mt-1 me-1"></i>
+            Apply Filters
+        </button>
+    </a>
+
+    <br/>
+    <br/>
+    
+    <div class="table-responsive mt-2">
+        <table class="table table-striped border rounded">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th class="kanbas-center-heading">A1 SETUP<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A2 HTML<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A3 CSS<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A4 BOOTSTRAP<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A5 JAVASCRIPT<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A6 REACT<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A7 REDUX<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A8 NODE<br/>(Out of 100)</th>
+                    <th class="kanbas-center-heading">A9 MONGO<br/>(Out of 100)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">James Smith</a>
+                    </td>
+                    <td class="kanbas-center-heading">98%</td>
+                    <td class="kanbas-center-heading">80%</td>
+                    <td class="kanbas-center-heading">87%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">100%</td>
+                    <td class="kanbas-center-heading">94%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">84%</td>
+                    <td class="kanbas-center-heading">92%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Elizabeth Jones</a>
+                    </td>
+                    <td class="kanbas-center-heading">83%</td>
+                    <td class="kanbas-center-heading">99%</td>
+                    <td class="kanbas-center-heading">94%</td>
+                    <td class="kanbas-center-heading">98%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">80%</td>
+                    <td class="kanbas-center-heading">84%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Manny de la Cruz</a>
+                    </td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">89%</td>
+                    <td class="kanbas-center-heading">94%</td>
+                    <td class="kanbas-center-heading">83%</td>
+                    <td class="kanbas-center-heading">83%</td>
+                    <td class="kanbas-center-heading">84%</td>
+                    <td class="kanbas-center-heading">91%</td>
+                    <td class="kanbas-center-heading">87%</td>
+                    <td class="kanbas-center-heading">96%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Ryu Tanaka</a>
+                    </td>
+                    <td class="kanbas-center-heading">81%</td>
+                    <td class="kanbas-center-heading">92%</td>
+                    <td class="kanbas-center-heading">82%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">83%</td>
+                    <td class="kanbas-center-heading">84%</td>
+                    <td class="kanbas-center-heading">98%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">96%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Emma Davis</a>
+                    </td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">88%</td>
+                    <td class="kanbas-center-heading">92%</td>
+                    <td class="kanbas-center-heading">78%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">90%</td>
+                    <td class="kanbas-center-heading">79%</td>
+                    <td class="kanbas-center-heading">88%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Michael Johnson</a>
+                    </td>
+                    <td class="kanbas-center-heading">89%</td>
+                    <td class="kanbas-center-heading">78%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">91%</td>
+                    <td class="kanbas-center-heading">
+                        <div class="kanbas-center-heading kanbas-edit-margin">
+                            <input class="form-control kanbas-center-heading kanbas-edit-grade w-50 float-start" value="87%"/>
+                            <i class="fa fa-pen-to-square float-start mt-1 ms-1"></i>
+                        </div>
+                    </td>
+                    <td class="kanbas-center-heading">89%</td>
+                    <td class="kanbas-center-heading">80%</td>
+                    <td class="kanbas-center-heading">76%</td>
+                    <td class="kanbas-center-heading">83%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">Sarah Lee</a>
+                    </td>
+                    <td class="kanbas-center-heading">94%</td>
+                    <td class="kanbas-center-heading">83%</td>
+                    <td class="kanbas-center-heading">79%</td>
+                    <td class="kanbas-center-heading">88%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">91%</td>
+                    <td class="kanbas-center-heading">89%</td>
+                    <td class="kanbas-center-heading">78%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="kanbas-hyperlink">David Miller</a>
+                    </td>
+                    <td class="kanbas-center-heading">88%</td>
+                    <td class="kanbas-center-heading">91%</td>
+                    <td class="kanbas-center-heading">86%</td>
+                    <td class="kanbas-center-heading">90%</td>
+                    <td class="kanbas-center-heading">82%</td>
+                    <td class="kanbas-center-heading">85%</td>
+                    <td class="kanbas-center-heading">87%</td>
+                    <td class="kanbas-center-heading">92%</td>
+                    <td class="kanbas-center-heading">79%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
 
 </body>
 </html>

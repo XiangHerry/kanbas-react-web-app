@@ -10,6 +10,9 @@
     color: #acabac;
 }
 
+.no-gutters {
+            padding-left: 0 !important;
+        }
 .kanbas-red {
     color: #d41a2d;
 }
@@ -83,7 +86,7 @@
 }
 
 .kanbas-column {
-    float: left;
+    float: right;
     margin: 8px;
 }
 
@@ -248,43 +251,56 @@
 <body>
 
 <!-- KANBAS NAVIGATION COLUMN -->
-<div class="list-group kanbas-sidebar kanbas-column">
-    <a href="/kanbas/navigation/accountNav.html" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-user kanbas-gray"></i><br/>
-        <div class="kanbas-sidebar-text">Account</div>
-    </a>
-    <a href="/kanbas/dashboard.html" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-clock kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Dashboard</div>
-    </a>
-    <a href="/kanbas/navigation/courseNav.html" class="list-group-item kanbas-sidebar-selected kanbas-icon-padding">
-        <i class="fa fa-book kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Courses</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-calendar kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Calendar</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-envelope kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Inbox</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-hourglass kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">History</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-tv kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Studio</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-tree kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Commons</div>
-    </a>
-    <a href="#" class="list-group-item kanbas-sidebar-unselected kanbas-icon-padding">
-        <i class="fa fa-question kanbas-red"></i><br/>
-        <div class="kanbas-sidebar-text">Help</div>
-    </a>
+<div class="container-fluid mt-5">
+
+    <div class="row">
+        <!-- Kanbas Navigation Column -->
+        <div class="col-md-3 position-fixed no-gutters"
+            style="max-width: 200px; min-width: 190px; padding-right: 25px; top: 0; left: 0;">
+
+            <aside style="background-color: #000; padding: 15px; width: 100%;">
+                <h3 class="text-white">Navigation</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-user-circle text-danger d-block mb-1"></i>
+                        <a href="/kanbas/navigation/accountNav.html" class="text-white">Account</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
+                        <a href="/kanbas/dashboard.html" class="text-white">Dashboard</a>
+                    </li>
+                    <li class="mb-3" style="background-color: #fff;">
+                        <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
+                        <a href="/kanbas/navigation/courseNav.html" class="text-danger">Courses</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">Calendar</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-inbox text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">Inbox</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-clock text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">History</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-tv text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">Studio</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-comment text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">Commons</a>
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-2x fa-question text-danger d-block mb-1"></i>
+                        <a href="#" class="text-white">Help</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
 </div>
 
 <!-- COURSE NAVIGATION COLUMN -->
@@ -301,13 +317,13 @@
     <a href="#" class="list-group-item kanbas-red kanbas-account-border">
         <div>Zoom Meetings</div>
     </a>
-    <a href="assignments.html" class="list-group-item kanbas-black kanbas-account-border">
+    <a href="/kanbas/assignments/index.html" class="list-group-item kanbas-black kanbas-account-border">
         <div class="kanbas-account-selected">Assignments</div>
     </a>
     <a href="#" class="list-group-item kanbas-red kanbas-account-border">
         <div>Quizzes</div>
     </a>
-    <a href="grades.html" class="list-group-item kanbas-red kanbas-account-border">
+    <a href="/kanbas/grades.html" class="list-group-item kanbas-red kanbas-account-border">
         <div>Grades</div>
     </a>
     <a href="#" class="list-group-item kanbas-red kanbas-account-border">
