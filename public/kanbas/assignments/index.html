@@ -38,6 +38,9 @@
         .no-gutters {
             padding-left: 0 !important;
         }
+        .position-fixed {
+    z-index: 1000;  
+}
     </style>
 </head>
 
@@ -66,9 +69,9 @@
                 <aside style="background-color: #000; padding: 15px; width: 100%;">
                     <h3 class="text-white">Navigation</h3>
                     <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <i class="fas fa-2x fa-user-circle text-danger d-block mb-1"></i>
-                            <a href="/kanbas/navigation/accountNav.html" class="text-white">Account</a>
+                        <li class="mb-3" >
+                            <i class="fas fa-2x fa-user-circle d-block mb-1" style="color: grey;"></i>
+                            <a href="/kanbas/profile/index.html" class="text-white">Account</a>
                         </li>
                         <li class="mb-3">
                             <i class="fas fa-2x fa-tachometer-alt text-danger d-block mb-1"></i>
@@ -76,8 +79,7 @@
                         </li>
                         <li class="mb-3" style="background-color: #fff;">
                             <i class="fas fa-2x fa-solid fa-book text-danger d-block mb-1"></i>
-                            <a href="/kanbas/navigation/courseNav.html" class="text-danger">Courses</a>
-                        </li>
+                            <a href="/kanbas/home.html" class="text-danger">Courses</a>
                         <li class="mb-3">
                             <i class="fas fa-2x fa-calendar-days text-danger d-block mb-1"></i>
                             <a href="#" class="text-white">Calendar</a>
@@ -134,7 +136,7 @@
                                         <button>+Group</button>
                                         <button><a class="text-danger"
                                                 href="/kanbas/assignments/edit.html">Assignment</a></button>
-                                        <button><i class="fa fa-ellipsis-v"></i>
+                                        <button><i class="fa fa-ellipsis-v ellipsis-icon"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -148,16 +150,15 @@
                                             </button>
                                             <span class="float-end">
                                                 <i class="fa fa-plus px-3"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
+                                                <i class="fa fa-ellipsis-v "></i>
                                             </span>
                                         </li>
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A1 SETUP
                                                 </div>
@@ -167,15 +168,16 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='https://example.com'"></i>
                                             </div>
                                         </li>
+                                        
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A2 HTML
                                                 </div>
@@ -185,15 +187,16 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='/kanbas/assignments/edit.html'"></i>
+
                                             </div>
                                         </li>
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A3 CSS
                                                 </div>
@@ -203,15 +206,16 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='/kanbas/assignments/edit.html'"></i>
+
                                             </div>
                                         </li>
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A4 BOOTSTRAP
                                                 </div>
@@ -221,15 +225,16 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='/kanbas/assignments/edit.html'"></i>
+
                                             </div>
                                         </li>
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A5 JAVASCRIPT
                                                 </div>
@@ -239,15 +244,16 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='/kanbas/assignments/edit.html'"></i>
+
                                             </div>
                                         </li>
                                         <li class="py-3 list-group-item d-flex align-items-center bordered-item">
-                                            <div class="mr-3">
+                                            <div class="mr-3 d-flex align-items-center">
                                                 <i class="fa-solid fa-grip-vertical fa-2xs"></i>
                                                 <i class="fas fa-lg fa-solid fa-book" style="color: green;"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
                                             </div>
-                                            <div class="d-flex flex-column">
+                                            <div class="d-flex flex-column flex-grow-1 position-relative"> 
                                                 <div>
                                                     A6 REACT
                                                 </div>
@@ -257,6 +263,8 @@
                                                 <div style="font-size: 12px;">
                                                     Due...
                                                 </div>
+                                                <i class="fa fa-ellipsis-v position-absolute" style="right: 0; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="window.location.href='/kanbas/assignments/edit.html'"></i>
+
                                             </div>
                                         </li>
                                         
