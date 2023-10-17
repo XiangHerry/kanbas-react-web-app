@@ -1,9 +1,21 @@
-import logo from './logo.svg';
+// import Labs from "./labs";
+// import HelloWorld from "./labs/a3/HelloWorld";
+// import Kanbas from "./kanbas";
+// import {HashRouter} from "react-router-dom";
+// import {Routes, Route, Navigate} from "react-router";
+// function App() {
+//   return (
 
-function App() {
-  return (
-    <h1>Hello World!</h1>
-  );
-}
-
-export default App;
+//     <HashRouter>
+//       <div>
+//         <Routes>
+//           <Route path="/"         element={<Navigate to="/Labs"/>}/>
+//           <Route path="/labs/*"   element={<Labs/>}/>
+//           <Route path="/hello"    element={<HelloWorld/>}/>
+//           <Route path="/kanbas/*" element={<Kanbas/>}/>
+//         </Routes>
+//       </div>
+//     </HashRouter>
+//   );
+// }
+// export default App;
