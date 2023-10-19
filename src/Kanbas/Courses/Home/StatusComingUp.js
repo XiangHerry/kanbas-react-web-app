@@ -5,17 +5,17 @@ function StatusComingUp() {
     const upcoming = [
         {
             title: "Lecture",
-            course: "CS4550.12631-202410",
+            course: "CS5610",
             time: "Sep 11 at 11:45am",
         },
         {
             title: "CS5610 06 SP23 Lecture",
-            course: "CS4550.12631 202410",
+            course: "CS5610",
             time: "Sep 11 at 6pm",
         },
         {
             title: "CS5610 Web Development Summer 1 2023-LECTURE",
-            course: "CS4550.12631.202410",
+            course: "CS5610.12631.202410",
             time: "Sep 11 at 7pm",
         },
     ];
