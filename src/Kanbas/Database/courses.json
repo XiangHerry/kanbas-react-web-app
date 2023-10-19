@@ -2,42 +2,42 @@
     {
         "_id": "68159",
         "name": "Web Development",
-        "number": "CS4562",
+        "number": "CS5610",
         "startDate": "2023-02-10",
         "endDate": "2023-06-15"
     },
     {
         "_id": "12487",
-        "name": "Artificial Intelligence",
-        "number": "CS3563",
+        "name": "Database Management Systems",
+        "number": "CS5200",
         "startDate": "2022-09-05",
         "endDate": "2023-01-10"
     },
     {
         "_id": "56291",
-        "name": "Intro to Cybersecurity",
-        "number": "CY1571",
+        "name": "Natural Language Processing",
+        "number": "CS6120",
         "startDate": "2023-04-15",
         "endDate": "2023-08-20"
     },
     {
         "_id": "94568",
-        "name": "Ethical Hacking",
-        "number": "CY3573",
+        "name": "Machine Learning",
+        "number": "CS6140",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15"
     },
     {
         "_id": "32874",
-        "name": "Digital Electronics",
-        "number": "CE2581",
+        "name": "Large-Scale Parallel Data Processing",
+        "number": "CS6240",
         "startDate": "2022-10-01",
         "endDate": "2023-02-05"
     },
     {
         "_id": "17643",
-        "name": "Microprocessor Systems",
-        "number": "CE4582",
+        "name": "Building Scalable Distributed Systems",
+        "number": "CS6650",
         "startDate": "2023-03-15",
         "endDate": "2023-07-20"
     }
