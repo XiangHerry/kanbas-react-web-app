@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     sum: 0,
 };
@@ -14,5 +13,5 @@ const addSlice = createSlice({
     },
 });
 
-export const { add } = addSlice.actions;
+export const {add} = addSlice.actions;
 export default addSlice.reducer;

@@ -29,6 +29,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, upd
                     type="date"
                     onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
                 />
+                
                 <input
                     value={course.endDate}
                     className="form-control mb-2"
